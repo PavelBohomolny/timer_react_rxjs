@@ -10,7 +10,7 @@ function Buttons({ start, stop, reset, wait }) {
       </button>
       <button
         className={'display wait'}
-        onClick={stop}>
+        onDoubleClick={stop}>
         Wait
       </button>
       <button className="btn btn-outline-info mybtn btn-lg reset" onClick={reset}>
