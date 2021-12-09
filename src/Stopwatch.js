@@ -50,6 +50,22 @@ function Stopwatch() {
     }
   };
 
+   const setTimeOut = () => {
+    let wasClicked = false;
+    let timeout;
+
+    if (wasClicked) {
+      wasClicked = false;
+      clearTimeout(timeout);
+      return;
+    }
+
+    wasClicked = true;
+    timeout = setTimeout(() => {
+      wasClicked = false;
+    }, 300);
+  };
+  
   return (
     <div className="App">
       <div className="main-section">
@@ -62,7 +78,7 @@ function Stopwatch() {
                 start={handleStart}
                 stop={handleStop}
                 reset={handleReset}
-                wait={handleWait}
+                wait={handleWait, setTimeOut}
               />
             </div>
           </div>
